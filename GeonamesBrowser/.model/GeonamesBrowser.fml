@@ -1,0 +1,75 @@
+
+<model xmlns="http://ns.adobe.com/Fiber/1.0">
+  <annotation name="ActionScriptGeneration">
+    <item name="FullyQualifyReferences">true</item>
+  </annotation>
+  <service name="Geonames">
+    <annotation name="ActionScriptGeneration">
+      <item name="ServiceType">HTTPMultiService</item>
+      <item name="Package">services.geonames</item>
+    </annotation>
+    <annotation name="ServiceTypeGroup">
+      <item name="ServiceBackendType">HTTPService</item>
+    </annotation>
+    <annotation name="ServiceConfig">
+      <item name="DEFAULT_ENTITY_PACKAGE">valueObjects</item>
+      <item name="LINKED_FILE"></item>
+    </annotation>
+    <function name="findNearby" return-type="Geoname[]">
+      <annotation name="analyze group">
+        <item name="analyzed">true</item>
+      </annotation>
+      <annotation name="ActionScriptGeneration">
+        <item name="SerializationFilter">com.adobe.serializers.xml.XMLSerializationFilter</item>
+        <item name="method">GET</item>
+        <item name="url">http://api.geonames.org/findNearby</item>
+      </annotation>
+      <annotation name="url group">
+        <item name="completeURL">http://api.geonames.org/findNearby?lat=-27.47067&amp;lng=153.023256&amp;username=ryanstewart&amp;radius=50&amp;featureClass=T</item>
+      </annotation>
+      <annotation name="ValidProperties">
+        <item name="propertySpecifier">toponymName,name,lat,lng,geonameId,countryCode,countryName,fcl,fcode,distance</item>
+      </annotation>
+      <annotation name="Properties">
+        <item name="xPath">/::geoname</item>
+      </annotation>
+      <annotation name="original signature">
+        <item name="inputParamNames">lat,lng,username,radius,featureClass</item>
+        <item name="inputParams">double,double,string,integer,string</item>
+        <item name="returnType">opaque</item>
+      </annotation>
+      <parameter name="lat" type="double"/>
+      <parameter name="lng" type="double"/>
+      <parameter name="username" type="string"/>
+      <parameter name="radius" type="integer"/>
+      <parameter name="featureClass" type="string"/>
+    </function>
+  </service>
+  <entity name="Geoname">
+    <annotation name="EntityProperties">
+      <item name="EntityOriginalName">Geoname</item>
+    </annotation>
+    <annotation name="service Group">
+      <item name="service">Geonames</item>
+    </annotation>
+    <annotation name="ServerProperties">
+      <item name="IncludeRemoteClass">nonempty</item>
+    </annotation>
+    <annotation name="findNearby">
+      <item name="propertySpecifier">toponymName,name,lat,lng,geonameId,countryCode,countryName,fcl,fcode,distance</item>
+    </annotation>
+    <annotation name="ActionScriptGeneration">
+      <item name="Package">valueObjects</item>
+    </annotation>
+    <property name="toponymName" type="string" required="true"/>
+    <property name="name" type="string" required="true"/>
+    <property name="lat" type="string" required="true"/>
+    <property name="lng" type="string" required="true"/>
+    <property name="geonameId" type="string" required="true"/>
+    <property name="countryCode" type="string" required="true"/>
+    <property name="countryName" type="string" required="true"/>
+    <property name="fcl" type="string" required="true"/>
+    <property name="fcode" type="string" required="true"/>
+    <property name="distance" type="string" required="true"/>
+  </entity>
+</model>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" 
+		title="HomeView" xmlns:components="components.*" xmlns:geonames="services.geonames.*">
+	
+	<fx:Script>
+		<![CDATA[
+			// http://api.geonames.org/findNearby?lat=-27.47067&lng=153.023256&username=ryanstewart&radius=50&featureClass=T
+			
+			protected function btnSearch_clickHandler(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				
+			}
+			
+			protected function btnLoc_clickHandler(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		
+	</fx:Declarations>
+	<s:navigationContent>
+
+	</s:navigationContent>
+	<s:actionContent>
+		<s:Button id="btnLoc" icon="@Embed('assets/gps.png')" 
+				  click="btnLoc_clickHandler(event)" />
+	</s:actionContent>
+	<s:layout>
+		<s:VerticalLayout paddingTop="15" />
+	</s:layout>
+	<components:FeatureClassList width="100%" id="featureList" />
+	<s:Button id="btnSearch" label="Need Location" width="100%" 
+			  click="btnSearch_clickHandler(event)" enabled="true" />
+	
+</s:View>
