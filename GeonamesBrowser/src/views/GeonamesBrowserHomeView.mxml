@@ -7,6 +7,9 @@
 		<![CDATA[
 			import flash.sensors.Geolocation;
 			
+			private var _lat:Number;
+			private var _lon:Number;
+			
 			import mx.rpc.events.ResultEvent;
 			// http://api.geonames.org/findNearby?lat=-27.47067&lng=153.023256&username=ryanstewart&radius=50&featureClass=T
 			
