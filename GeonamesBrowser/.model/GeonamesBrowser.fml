@@ -72,4 +72,74 @@
     <property name="fcode" type="string" required="true"/>
     <property name="distance" type="string" required="true"/>
   </entity>
+  <service name="Flickr">
+    <annotation name="ActionScriptGeneration">
+      <item name="ServiceType">HTTPMultiService</item>
+      <item name="Package">services.flickr</item>
+    </annotation>
+    <annotation name="ServiceTypeGroup">
+      <item name="ServiceBackendType">HTTPService</item>
+    </annotation>
+    <annotation name="ServiceConfig">
+      <item name="DEFAULT_ENTITY_PACKAGE">valueObjects</item>
+      <item name="LINKED_FILE"></item>
+    </annotation>
+    <function name="getPhotos" return-type="Photo[]">
+      <annotation name="analyze group">
+        <item name="analyzed">true</item>
+      </annotation>
+      <annotation name="ActionScriptGeneration">
+        <item name="SerializationFilter">com.adobe.serializers.xml.XMLSerializationFilter</item>
+        <item name="method">GET</item>
+        <item name="url">http://api.flickr.com/services/rest/</item>
+      </annotation>
+      <annotation name="url group">
+        <item name="completeURL">http://api.flickr.com/services/rest/?method=flickr.photos.search&amp;api_key=fc14f2dae4b5c4d5202db55990d0ac51&amp;tags=Brisbane&amp;lat=-27.47067&amp;lon=153.03333&amp;radius=20&amp;radius_units=miles</item>
+      </annotation>
+      <annotation name="ValidProperties">
+        <item name="propertySpecifier">id,owner,secret,server,farm,title,ispublic,isfriend,isfamily</item>
+      </annotation>
+      <annotation name="Properties">
+        <item name="xPath">/::photos/::photo</item>
+      </annotation>
+      <annotation name="original signature">
+        <item name="inputParamNames">method,api_key,tags,lat,lon,radius,radius_units</item>
+        <item name="inputParams">string,string,string,double,double,string,string</item>
+        <item name="returnType">opaque</item>
+      </annotation>
+      <parameter name="method" type="string"/>
+      <parameter name="api_key" type="string"/>
+      <parameter name="tags" type="string"/>
+      <parameter name="lat" type="double"/>
+      <parameter name="lon" type="double"/>
+      <parameter name="radius" type="string"/>
+      <parameter name="radius_units" type="string"/>
+    </function>
+  </service>
+  <entity name="Photo">
+    <annotation name="EntityProperties">
+      <item name="EntityOriginalName">Photo</item>
+    </annotation>
+    <annotation name="service Group">
+      <item name="service">Flickr</item>
+    </annotation>
+    <annotation name="ServerProperties">
+      <item name="IncludeRemoteClass">nonempty</item>
+    </annotation>
+    <annotation name="getPhotos">
+      <item name="propertySpecifier">id,owner,secret,server,farm,title,ispublic,isfriend,isfamily</item>
+    </annotation>
+    <annotation name="ActionScriptGeneration">
+      <item name="Package">valueObjects</item>
+    </annotation>
+    <property name="id" type="string" required="true"/>
+    <property name="owner" type="string" required="true"/>
+    <property name="secret" type="string" required="true"/>
+    <property name="server" type="string" required="true"/>
+    <property name="farm" type="string" required="true"/>
+    <property name="title" type="string" required="true"/>
+    <property name="ispublic" type="string" required="true"/>
+    <property name="isfriend" type="string" required="true"/>
+    <property name="isfamily" type="string" required="true"/>
+  </entity>
 </model>
