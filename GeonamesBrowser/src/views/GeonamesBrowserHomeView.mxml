@@ -5,17 +5,17 @@
 	
 	<fx:Script>
 		<![CDATA[
+			import mx.rpc.events.ResultEvent;
 			// http://api.geonames.org/findNearby?lat=-27.47067&lng=153.023256&username=ryanstewart&radius=50&featureClass=T
 			
 			protected function btnSearch_clickHandler(event:MouseEvent):void
 			{
-				// TODO Auto-generated method stub
-				
+	
 			}
 			
 			protected function btnLoc_clickHandler(event:MouseEvent):void
 			{
-				// TODO Auto-generated method stub
+				
 				
 			}
 			
@@ -23,7 +23,7 @@
 	</fx:Script>
 	
 	<fx:Declarations>
-		
+
 	</fx:Declarations>
 	<s:navigationContent>
 
