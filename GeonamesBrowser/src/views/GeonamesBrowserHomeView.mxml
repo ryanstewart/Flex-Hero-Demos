@@ -5,12 +5,14 @@
 	
 	<fx:Script>
 		<![CDATA[
+			import flash.sensors.Geolocation;
+			
 			import mx.rpc.events.ResultEvent;
 			// http://api.geonames.org/findNearby?lat=-27.47067&lng=153.023256&username=ryanstewart&radius=50&featureClass=T
 			
 			protected function btnSearch_clickHandler(event:MouseEvent):void
 			{
-	
+
 			}
 			
 			protected function btnLoc_clickHandler(event:MouseEvent):void

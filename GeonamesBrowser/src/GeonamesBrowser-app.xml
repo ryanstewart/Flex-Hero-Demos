@@ -212,6 +212,7 @@
 			    <!--<uses-permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
 			    <!--<uses-permission name="android.permission.READ_PHONE_STATE"/>-->
 			    <uses-permission name="android.permission.ACCESS_FINE_LOCATION"/>
+			    <uses-permission name="android.permission.ACCESS_COARSE_LOCATION"/>
 			    <!--The DISABLE_KEYGUARD and WAKE_LOCK permissions should be toggled together
 					in order to access AIR's SystemIdleMode APIs-->
 			    <!--<uses-permission name="android.permission.DISABLE_KEYGUARD"/>-->
