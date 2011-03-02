@@ -6,3 +6,5 @@ http://blog.digitalbackcountry.com
 This repository includes a bunch of demos for Flex "Hero", the upcoming version of the Flex framework.
 
 Geonames Demo - A demo using the Geonames webservice and the geolocation APIs that shows off the basics of Flex mobile, the ActionBar, ViewNavigator, view transitions, etc.
+
+CollaborationMobile - a LiveCycle Collaboration Services demo (http://www.adobe.com/devnet/flashplatform/services/collaboration.html) that uses collaboration features including webcam, whiteboard, and chat on a mobile device. Available on the Android marketplace - https://market.android.com/details?id=air.com.digitalbackcountry.StopCollaborateAndListen
