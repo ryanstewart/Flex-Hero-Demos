@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:ViewNavigatorApplication xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					 xmlns:s="library://ns.adobe.com/flex/spark" 
+					 firstView="views.CollaborationMobileHome"
+					 creationComplete="mobileapplication1_creationCompleteHandler(event)" 
+					 xmlns:rtc="http://ns.adobe.com/rtc">
+	<fx:Script source="userData.as" />
+	<fx:Script>
+		<![CDATA[
+			import mx.events.FlexEvent;
+
+			protected function mobileapplication1_creationCompleteHandler(event:FlexEvent):void
+			{
+				cSession.login();
+			}
+
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<rtc:AdobeHSAuthenticator id="auth" userName="{username}" password="{password}" />
+		<rtc:ConnectSession id="cSession" authenticator="{auth}" roomURL="https://collaboration.adobelivecycle.com/cocoryan/codeworks2010" />
+	</fx:Declarations>
+</s:ViewNavigatorApplication>

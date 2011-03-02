@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" 
+		title="Webcam" xmlns:rtc="http://ns.adobe.com/rtc">
+	<fx:Script>
+		<![CDATA[
+			import mx.events.FlexEvent;
+			protected function back_clickHandler(event:MouseEvent):void
+			{
+				navigator.popToFirstView();
+			}
+
+			protected function webcamera1_creationCompleteHandler(event:FlexEvent):void
+			{
+//				trace(wc.publisher.camera.name);
+			}
+
+		]]>
+	</fx:Script>
+
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:actionContent>
+		<s:Button id="back" label="Back" click="back_clickHandler(event)" />
+	</s:actionContent>
+	<rtc:WebCamera id="webCam" width="100%" height="100%" creationComplete="webcamera1_creationCompleteHandler(event)" />
+</s:View>
