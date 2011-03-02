@@ -1,0 +1,8 @@
+Flex Hero Demos
+Ryan Stewart
+ryan@adobe.com
+http://blog.digitalbackcountry.com
+
+This repository includes a bunch of demos for Flex "Hero", the upcoming version of the Flex framework.
+
+Geonames Demo - A demo using the Geonames webservice and the geolocation APIs that shows off the basics of Flex mobile, the ActionBar, ViewNavigator, view transitions, etc.
