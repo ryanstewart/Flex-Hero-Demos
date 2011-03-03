@@ -103,13 +103,13 @@
         <item name="xPath">/::photos/::photo</item>
       </annotation>
       <annotation name="original signature">
-        <item name="inputParamNames">method,api_key,tags,lat,lon,radius,radius_units</item>
-        <item name="inputParams">string,string,string,double,double,string,string</item>
         <item name="returnType">opaque</item>
+        <item name="inputParamNames">method,api_key,text,lat,lon,radius,radius_units</item>
+        <item name="inputParams">string,string,string,double,double,string,string</item>
       </annotation>
       <parameter name="method" type="string"/>
       <parameter name="api_key" type="string"/>
-      <parameter name="tags" type="string"/>
+      <parameter name="text" type="string"/>
       <parameter name="lat" type="double"/>
       <parameter name="lon" type="double"/>
       <parameter name="radius" type="string"/>
@@ -121,7 +121,7 @@
       <item name="EntityOriginalName">Photo</item>
     </annotation>
     <annotation name="service Group">
-      <item name="service">Flickr</item>
+      <item name="service">Flickr,FlickrDummy</item>
     </annotation>
     <annotation name="ServerProperties">
       <item name="IncludeRemoteClass">nonempty</item>

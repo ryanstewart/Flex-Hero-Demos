@@ -31,7 +31,7 @@ internal class _Super_Flickr extends com.adobe.fiber.services.wrapper.HTTPServic
          operation = new mx.rpc.http.Operation(null, "getPhotos");
          operation.url = "http://api.flickr.com/services/rest/";
          operation.method = "GET";
-         argsArray = new Array("method","api_key","tags","lat","lon","radius","radius_units");
+         argsArray = new Array("method","api_key","text","lat","lon","radius","radius_units");
          operation.argumentNames = argsArray;         
          operation.serializationFilter = serializer0;
          operation.properties = new Object();
@@ -64,10 +64,10 @@ internal class _Super_Flickr extends com.adobe.fiber.services.wrapper.HTTPServic
       *
       * @return an mx.rpc.AsyncToken whose result property will be populated with the result of the operation when the server response is received.
       */
-    public function getPhotos(method:String, api_key:String, tags:String, lat:Number, lon:Number, radius:String, radius_units:String) : mx.rpc.AsyncToken
+    public function getPhotos(method:String, api_key:String, text:String, lat:Number, lon:Number, radius:String, radius_units:String) : mx.rpc.AsyncToken
     {
         var _internal_operation:mx.rpc.AbstractOperation = _serviceControl.getOperation("getPhotos");
-		var _internal_token:mx.rpc.AsyncToken = _internal_operation.send(method,api_key,tags,lat,lon,radius,radius_units) ;
+		var _internal_token:mx.rpc.AsyncToken = _internal_operation.send(method,api_key,text,lat,lon,radius,radius_units) ;
         return _internal_token;
     }
      
