@@ -4,6 +4,10 @@
 					 firstView="views.CollaborationMobileHome"
 					 creationComplete="mobileapplication1_creationCompleteHandler(event)" 
 					 xmlns:rtc="http://ns.adobe.com/rtc">
+	<!-- This application uses LiveCycle Collaboration Services - https://cocomo.acrobat.com/
+		You need to have an LCCS account and grab the libraries for LCCS applications then include
+		them in your application -->
+	<!-- Replace this file with your own user data file or just remove it and use the password/username below -->
 	<fx:Script source="userData.as" />
 	<fx:Script>
 		<![CDATA[
@@ -17,6 +21,7 @@
 		]]>
 	</fx:Script>
 	<fx:Declarations>
+		<!-- This will use the AdobeID/Password you used to register for LCCS - https://cocomo.acrobat.com/ --> 
 		<rtc:AdobeHSAuthenticator id="auth" userName="{username}" password="{password}" />
 		<rtc:ConnectSession id="cSession" authenticator="{auth}" roomURL="https://collaboration.adobelivecycle.com/cocoryan/codeworks2010" />
 	</fx:Declarations>
