@@ -18,7 +18,7 @@
 				// so grab the photos from Flickr
 				trace('calling Flickr');
 				getPhotosResult.token = flickr.getPhotos("flickr.photos.search",
-					"fc14f2dae4b5c4d5202db55990d0ac51",data.toponymName,data.lat,data.lng,20,"miles");
+					"fc14f2dae4b5c4d5202db55990d0ac51",data.toponymName,data.lat,data.lng,"20","miles");
 			}
 
 

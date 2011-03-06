@@ -11,7 +11,7 @@
 			private var _lon:Number;
 			
 			import mx.rpc.events.ResultEvent;
-			// http://api.geonames.org/findNearby?lat=-37.842722&lng=144.996295&username=ryanstewart&radius=50&featureClass=T
+			// http://api.geonames.org/findNearby?lat=-37.511981&lng=127.059256&username=ryanstewart&radius=50&featureClass=T
 			
 			protected function btnSearch_clickHandler(event:MouseEvent):void
 			{
