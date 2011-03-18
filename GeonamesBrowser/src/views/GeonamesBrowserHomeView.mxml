@@ -9,26 +9,52 @@
 			
 			private var _lat:Number;
 			private var _lon:Number;
+			private var geo:Geolocation;
 			
 			import mx.rpc.events.ResultEvent;
 			// http://api.geonames.org/findNearby?lat=37.511981&lng=127.059256&username=ryanstewart&radius=50&featureClass=T
 			
 			protected function btnSearch_clickHandler(event:MouseEvent):void
 			{
-
+				findNearbyResult.token = geonames.findNearby(_lat,_lon, "ryanstewart", 50, featureList.selectedItem.featureClass);
 			}
 			
 			protected function btnLoc_clickHandler(event:MouseEvent):void
 			{
+				if(Geolocation.isSupported)
+				{
+					// init geolocation data 
+					geo = new Geolocation();
+					geo.addEventListener(GeolocationEvent.UPDATE,onUpdate);
+					btnSearch.label = "Getting Location";
+				} else {
+					btnSearch.label = "Location Not Supported";
+				}	
 				
-				
+			}
+			
+			
+			protected function myResult(event:ResultEvent):void
+			{
+				// TODO Auto-generated method stub
+				navigator.pushView(ToponymListView,event.result);
+			}
+			
+			
+			protected function onUpdate(event:GeolocationEvent):void
+			{
+				// TODO Auto-generated method stub
+				btnSearch.label = "Click to Search";
+				_lat = event.latitude;
+				_lon = event.longitude;
 			}
 			
 		]]>
 	</fx:Script>
 	
 	<fx:Declarations>
-
+		<s:CallResponder id="findNearbyResult" result="myResult(event)"/>
+		<geonames:Geonames id="geonames"/>
 	</fx:Declarations>
 	<s:navigationContent>
 
